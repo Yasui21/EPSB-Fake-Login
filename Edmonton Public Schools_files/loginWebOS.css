@@ -1,4 +1,4 @@
-#BackgroundDisplayHelper {background:url("/images/icons/icons_6.1/other/EPSB-logiin-large.png") no-repeat 50% 50%;position:static;background-position:bottom right;}
+#BackgroundDisplayHelper {background:url("../images/icons/icons_6.1/other/EPSB-logiin-large.png") no-repeat 50% 50%;position:static;background-position:bottom right;}
 
 
 
@@ -7,7 +7,7 @@
 
 
 
-.loginFormLogo{background-color:#ffffff;width:300px;height:90px;background-image:url("/images/icons/icons_6.1/other/staffzone.png");background-repeat:no-repeat;background-position:center center;}
+.loginFormLogo{background-color:#ffffff;width:300px;height:90px;background-image:url("../images/icons/icons_6.1/other/staffzone.png");background-repeat:no-repeat;background-position:center center;}
 
 
 .loginCopyRightText {font-size:10px;font-family:tahoma,sans-serif;color:#FFFFFF;float:right;margin-top:3px;}
@@ -76,6 +76,6 @@ body .dojoFloatingPaneActionItem {vertical-align:middle;margin-right:1px;height:
 .blankLoginBox {width:400px;margin:0 auto;}
 
 
-.resetPasswordIcon {background:url("/images/icons/icons_6.1/other/support.png") no-repeat;}
+.resetPasswordIcon {background:url("../images/icons/icons_6.1/other/support.png") no-repeat;}
 
-.sysCheckIcon {background:url("/images/icons/icons_6.1/other/accept.png") no-repeat;}
+.sysCheckIcon {background:url("../images/icons/icons_6.1/other/accept.png") no-repeat;}

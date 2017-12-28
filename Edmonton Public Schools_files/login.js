@@ -62,12 +62,12 @@ function focusStyle(element) {
 }
 
 function blurStyle(element) {
-    element.className = "loginForm-text-input";                
+    element.className = "loginForm-text-input";
 }
 
 if (window.dojo) {
-    dojo.addOnLoad( focus );  
-    dojo.addOnLoad( checkSystemLanuch );     
+    dojo.addOnLoad( focus );
+    dojo.addOnLoad( checkSystemLanuch );
     dojo.addOnLoad( checkLoginBoxHeight );
     dojo.addOnLoad( autoCenter );
     dojo.addOnLoad( updatePrivacyPolicyLink );
@@ -150,11 +150,11 @@ function createIframe( url, name ) {
 }
 
 
-function _launchSystemCheck(){  
+function _launchSystemCheck(){
    if (!dojo.render.html.ie && typeof BPLoginFlash_DoFSCommand != 'undefined') {
         return true;
    }
-    
+
    var url = "/apps/systemCheck/systemCheck.jsp";
    var name = "SystemCheck";
    var id = "SystemCheck";
@@ -190,13 +190,13 @@ function _launchSystemCheck(){
                                                                 executeScripts : true,
                                                                 hasShadow : true,
                                                                 resizable : true,
-                                                                windowState : "normal", 
+                                                                windowState : "normal",
                                                                 url : url,
                                                                 constrainToContainer: false,
                                                                 iframeName : name,
                                                                 displayRefreshAction : true,
                                                                 displayCloseAction : true,
-                                                                displayMinimizeAction : false, 
+                                                                displayMinimizeAction : false,
                                                                 displayMaximizeAction : true},
                                                                 div);
    dojo.html.setStyleAttributes(floatWin.domNode,"position:absolute;top:" + top + "px;left:" + left + "px;width: " + width + "px; height: " + height + "px;z-index:1005");
@@ -283,11 +283,11 @@ function isOldDojo() {
     return dojo.widget != undefined;
 }
 
-function _launchOpenIDLogin(dest_url){  
+function _launchOpenIDLogin(dest_url){
    if (!dojo.render.html.ie && typeof BPLoginFlash_DoFSCommand != 'undefined') {
         return true;
    }
-    
+
    var url = dest_url;
    var name = "OpenIDLogin";
    var id = "OpenIDLogin";
@@ -323,13 +323,13 @@ function _launchOpenIDLogin(dest_url){
                                                                 executeScripts : true,
                                                                 hasShadow : true,
                                                                 resizable : true,
-                                                                windowState : "normal", 
+                                                                windowState : "normal",
                                                                 url : url,
                                                                 constrainToContainer: false,
                                                                 iframeName : name,
                                                                 displayRefreshAction : true,
                                                                 displayCloseAction : true,
-                                                                displayMinimizeAction : false, 
+                                                                displayMinimizeAction : false,
                                                                 displayMaximizeAction : true},
                                                                 div);
    dojo.html.setStyleAttributes(floatWin.domNode,"position:absolute;top:" + top + "px;left:" + left + "px;width: " + width + "px; height: " + height + "px;z-index:1005");
@@ -342,11 +342,11 @@ function _launchOpenIDLogin(dest_url){
    return false;
 }
 
-function _launchOpenIDClaim(dest_url){  
+function _launchOpenIDClaim(dest_url){
    if (!dojo.render.html.ie && typeof BPLoginFlash_DoFSCommand != 'undefined') {
         return true;
    }
-    
+
    var url = dest_url;
    var name = "OpenIDLogin";
    var id = "OpenIDLogin";
@@ -382,13 +382,13 @@ function _launchOpenIDClaim(dest_url){
                                                                 executeScripts : true,
                                                                 hasShadow : true,
                                                                 resizable : true,
-                                                                windowState : "normal", 
+                                                                windowState : "normal",
                                                                 url : url,
                                                                 constrainToContainer: false,
                                                                 iframeName : name,
                                                                 displayRefreshAction : true,
                                                                 displayCloseAction : true,
-                                                                displayMinimizeAction : false, 
+                                                                displayMinimizeAction : false,
                                                                 displayMaximizeAction : true},
                                                                 div);
    dojo.html.setStyleAttributes(floatWin.domNode,"position:absolute;top:" + top + "px;left:" + left + "px;width: " + width + "px; height: " + height + "px;z-index:1005");
@@ -524,7 +524,7 @@ function localizeLink(link_id,link_href){
           language = 'en';
       }
     }
-    
+
     switch(country)
     {
         case 'gb':
@@ -545,5 +545,5 @@ function revealAnswer(index) {
     } else {
         input.type = "password";
         icon.src = "/swAdmin/images/SSO_show.png";
-    }     
+    }
 }
