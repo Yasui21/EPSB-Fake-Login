@@ -1,0 +1,560 @@
+html, body{
+    margin: 0px;
+    cursor: default;
+    overflow: hidden;
+    height: 100%;
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+input {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+}
+
+body {
+    background:  #ffffff url() no-repeat center center;
+}
+
+body, td {
+    font: 13px tahoma, sans-serif;
+}
+
+h1 {
+    color: #173165;
+    margin-top: 5px;
+    white-space: nowrap;    
+}
+
+form {
+    margin: 0px;
+}
+
+#BackgroundDisplayHelper {
+    background: url('/images/loginpage-img/Clouds-with-Globe.png') no-repeat 50% 50%
+}
+
+.loginTextOverride { 
+    font-size: 13px;
+    font-family: tahoma,sans-serif;
+    color: #173165;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.loginStatusText { 
+    font-size:15px; 
+    font-family: tahoma,sans-serif; 
+    color: #FF0000; 
+}
+.loginWarningText { 
+    font-size:13px; 
+    font-family: tahoma,sans-serif; 
+    color: #666666; 
+}
+.loginCopyRightText { 
+    font-size:10px;
+    font-family: tahoma,sans-serif;
+    color: #7A7A7A;
+    float: right; 
+    margin-top: 3px
+}
+
+.loginForm-main-table {
+    padding: 0px;
+    border-spacing: 0px;
+    margin: 0 auto
+}
+
+.loginForm-main-table td {
+    padding: 4px
+}
+
+.loginForm-form-spacer {
+    height: 12px;
+}
+
+.loginForm-label-cell {
+    text-align: left;
+}
+
+.loginForm-label-cell div {
+    text-align: left;
+}
+
+.loginForm-value-cell {
+    text-align: left;
+    padding-left: 3px;
+    width: 130px;
+    position: relative;
+}
+
+.toggleIcon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+}
+
+.ie8 .toggleIcon {
+    display: none;
+}
+
+.loginForm-button-cell {
+    text-align: right;
+}
+
+.loginForm-label-text {
+    font-size: 13px;
+    font-family: tahoma,sans-serif;
+    color: #173165;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.loginForm-colon {
+    display: none;
+}
+
+.loginForm-text-input {
+    background-color: #ffffff;
+    border: 2px solid #D3D766;
+    color:#666666;
+    font-family: tahoma, sans-serif;
+    font-size: 13px;
+    padding: 3px;
+    width: 128px;
+    margin-top: 3px;
+    -webkit-transition-property: border;
+    -moz-transition-property: border;
+    transition-property: border;
+    -webkit-transition-duration: 0.50s;
+    -moz-transition-duration: 0.50s;
+    transition-duration: 0.50s;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(90deg, #FFFFFF 70%, #ECECEC) !important;
+    background: -moz-linear-gradient(90deg, #FFFFFF 70%, #ECECEC) !important;
+}
+
+.loginForm-text-input-hover {
+    border: 2px solid #173165;
+    color: #666666;
+    font-family: tahoma, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding:3px;    
+    width: 128px;
+    background: white !important;
+}
+
+.ie .loginForm-text-input-hover, .ie .loginForm-text-input {
+    height: 18px;
+}
+
+.loginInformation-label {
+    font-size:13px;
+    font-family: tahoma,sans-serif;
+    color: #173165;
+    font-weight: bold;
+}
+.loginInformation-link {
+    font-size:11px;
+    font-family: tahoma,sans-serif;
+    color: #515151;
+}
+
+.loginIconTable {
+    padding: 10px;
+}
+
+.loginFormLogo{
+    background-color: #ffffff;
+    width: 300px;
+    height: 90px;
+    background-image: url(/images/logo_stoneware_lenovo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.loginFooter{
+    height: 30px;
+    background-color: #efefef;
+    text-align: right;
+    padding-right: 15px;
+    color: #666666;
+}
+
+
+/* Dojo CSS */
+
+body .dojoFloatingPane {
+    /* essential css */
+    position: absolute;
+    overflow: visible;		/* so drop shadow is displayed */
+    z-index: 10;
+
+    /* styling css */
+    border: 0px solid;
+    background-color: transparent;
+
+}
+
+
+body .dojoFloatingPaneTitleBar {
+    vertical-align: top;
+    margin: 2px 2px 2px 2px;
+    z-index: 10;
+    background-color: #7596c6;
+    cursor: default;
+    overflow: hidden;
+    border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;
+    vertical-align: middle;
+}
+
+body .dojoFloatingPaneTitleText {
+    float: left;
+    padding: 4px 4px 2px 2px;
+    white-space: nowrap;
+    color: #ffffff;
+    font: bold 11px Tahoma, sans-serif;
+}
+
+body .dojoTitleBarIcon {
+    float: left;
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+body .dojoFloatingPaneActions{
+    float: right;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    vertical-align: middle;
+}
+
+
+body .dojoFloatingPaneActionItem {
+    vertical-align: middle;
+    margin-right: 1px;
+    height: 22px;
+    width: 22px;
+}
+
+
+body .dojoFloatingPaneTitleBarIcon {
+    /* essential css */
+    float: left;
+
+    /* styling css */
+    margin-left: 0px;
+    margin-right: 4px;
+    max-height: 24px;
+    height: auto;
+    _height: 24px;
+}
+
+body .dojoFloatingPaneClient {
+    border: 1px solid;
+    border-color: #000;
+    background-color: #fbfbfb;
+    color: #1D1D1D;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    border-width: 1px 2px 2px 2px;
+}
+
+body .dojoFloatingPaneTitleBar_tl {
+    background:transparent url(/swDashboard/swdojo/widget/templates/images/left-top.gif) no-repeat scroll 0pt;
+    height:34px;
+    width:14px;
+}
+body .dojoFloatingPaneTitleBar_t {
+    background:transparent url(/swDashboard/swdojo/widget/templates/images/middle.gif) repeat-x scroll 0pt;
+    height:34px;
+}
+body .dojoFloatingPaneTitleBar_tr {
+    background:transparent url(/swDashboard/swdojo/widget/templates/images/right-top.gif) no-repeat scroll 0pt;
+    height:34px;
+    width:10px;
+}
+
+/*
+.loginForm-info-table {
+    margin: 0 auto;
+}
+*/
+
+#LoginBox {
+    width: 200px;
+    background-color: #F2F5A6;
+    color: #666666;
+    /*padding: 0px 15px 10px 15px;   remove to fix case 10869 */
+    padding: 0px 15px 10px 15px;
+    border-radius: 4px 4px 4px 4px;
+    border: solid 2px #D3D766;
+    margin: 0 auto;
+    box-shadow: 2px 2px 2px #666666;
+}
+
+.loginPage #LoginBox {
+    width: 200px;
+    position: relative;
+}
+
+
+.wideLogin #LoginBox {
+    width: 350px;
+}
+
+.blankLoginBox {
+    width: 400px;   
+    margin: 0 auto;
+}
+
+.windowPanelCover
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+}
+
+/*Desktop profile dialog css*/
+.WebOSButton {
+    color:#ffffff;
+    font: 14px tahoma, sans-serif;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: solid 2px #173165;
+    background-color: #2958B5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2958B5), to(#1E4186)) !important;
+    background: -moz-linear-gradient(90deg, #1E4186, #2958B5) !important;
+    cursor: pointer;
+}
+
+.WebOSButtonHover {
+    border: solid 2px #173165;
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#2958B5), to(#1E4186)) !important;*/
+    background-color: #5676B5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5676B5), to(#5676B5)) !important;
+    background: -moz-linear-gradient(90deg, #5676B5, #5676B5) !important;
+}
+
+.WebOSButtonDisabled {
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod='scale',src='/images/WebOSGlossyButtonDisabled.png');
+    cursor: default;
+}
+.WebOSButtonDisabled[class] {
+    background-image: url(/images/WebOSGlossyButtonDisabled.png);
+}
+
+#WrapperMessage {
+    background-color: transparent;
+    font: 12px tahoma, sans-serif;
+    text-align:left;
+    border-bottom: solid 1px black;
+    height: 100px;
+    padding: 10px;
+    -moz-box-sizing: border-box;
+}
+
+#LoginTable {
+    width: 100%;
+    height: 100%;
+}
+
+.loginHeader {
+    height: 90px;
+    border-bottom: solid 1px #efefef;
+}
+
+.loginCenteredContent h1 {
+    padding-bottom: 60px;
+}
+
+.loginCenteredContent {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.loginFormIconAlert {
+    min-height: 130px;
+    background: url('/swDashboard/images/icons/stock/Coquette/128x128/warning.png') no-repeat 0% 100%;
+    padding-left: 150px;
+}
+
+.loginFormIconSucceed {
+    min-height: 130px;
+    background: url('/swDashboard/images/icons/stock/Coquette/128x128/accept.png') no-repeat 0% 100%;
+    padding-left: 150px;
+}
+
+.loginFormIconInfo {
+    min-height: 130px;
+    background: url('/swDashboard/images/icons/stock/Coquette/128x128/info.png') no-repeat 0% 100%;
+    padding-left: 150px;
+}
+
+.loginBlockCell {
+    vertical-align: middle;
+}
+
+.loginBlock {
+    margin-top: 10px;
+}
+
+.loginLinksBlock {
+    width: 50%;
+    float: left;
+}
+
+.loginFormBlock {
+    width: 50%;
+    float: right;
+}
+
+.loginTitleBlock {
+    font: normal 40px Tahoma, sans-serif;
+    color: #173165;
+    position: absolute;
+    width: 100%;
+    top: 100px; 
+    display: none;
+}
+
+.loginTitleBlock span {
+    position: relative;
+    top: 30%;
+}
+
+
+.loginInformation-icon {
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+.sysCheckIcon {
+    background: url('/swDashboard/images/icons/stock/Coquette/32x32/accept.png') no-repeat;
+}
+
+.resetPasswordIcon {
+    background: url('/swDashboard/images/icons/stock/Coquette/32x32/key.png') no-repeat;
+}
+
+.addtInfoIcon {
+    background: url('/swDashboard/images/icons/stock/Coquette/32x32/info.png') no-repeat;
+}
+
+.idRetrieveIcon {
+    background: url('/swDashboard/images/icons/stock/Coquette/32x32/search_user.png') no-repeat;
+}
+
+.userRegIcon {
+    background: url('/swDashboard/images/icons/stock/Coquette/32x32/add_user.png') no-repeat;
+}
+
+.openIdIcon {
+    background: url('/swDashboard/images/icons/stock/Coquette/32x32/id_card.png') no-repeat;
+}
+
+.loginForm-text-description {
+    font-size: 12px;
+    font-weight: normal;
+    color: #173165;
+}
+
+.fullinput .loginForm-text-input {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#LoadingIndicator {
+    display:none;
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+}
+
+.Disabled {
+    background: #7A8CB0 url() !important;
+    color: #DBDBDB;
+    border-color: #3D4A65;
+    cursor: default;
+}
+
+#LoadingIcon {
+    background: url('/images/SmoothLoading.png') no-repeat 0% 50% !important;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
+
+.ie #LoadingIcon {
+    background-image: url() !important;
+}
+
+.loading {
+    -webkit-animation: rotate1 2s linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: rotate1 2s linear;
+    -moz-animation-iteration-count: infinite; 
+}
+
+.loginFormIconLenovoOpenId{
+    background: url("/openid/CloverLoader.gif") no-repeat center center transparent;
+    height: 93px;
+    left: -150px;
+    position: absolute;
+    top: 40px;
+    width: 93px;
+}
+
+.loginFormIconOtherOpenId{
+    background: url("/images/UniversalProfileLoadingIndicator.png") no-repeat center center transparent;
+    height: 57px;
+    left: -120px;
+    position: absolute;
+    top: 40px;
+    width: 57px;
+    -webkit-animation: rotate1 3s linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: rotate1 3s linear;
+    -moz-animation-iteration-count: infinite; 
+}
+
+.ie .loginFormIconOtherOpenId {
+    background-image: url(/images/UniversalProfileLoadingIndicator.gif) !important;
+}
+
+.loginForm-info-table br {
+    line-height: 14px;
+}
+
+@-webkit-keyframes rotate1 {
+    from { -webkit-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotate1 {
+    from { -moz-transform: rotate(0deg); }
+    to   { -moz-transform: rotate(360deg); }
+}
+
+#openIDForm {
+    padding-left: 3px;
+}

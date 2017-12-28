@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="REFRESH" content="1140">
+                    
+        
+
+
+
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="apple-touch-icon" href="https://staffzone.epsb.ca/apple-touch-icon-57x57.png" sizes="57x57">
+<link rel="apple-touch-icon" href="https://staffzone.epsb.ca/apple-touch-icon-72x72.png" sizes="72x72">
+<link rel="apple-touch-icon" href="https://staffzone.epsb.ca/apple-touch-icon-114x114.png" sizes="114x114">
+<title>Edmonton Public Schools</title>
+
+<link rel="stylesheet" type="text/css" href="Edmonton%20Public%20Schools_files/Default_loginWebOS.css">
+
+<link rel="stylesheet" type="text/css" href="Edmonton%20Public%20Schools_files/loginWebOS.css">
+
+
+<script type="text/javascript">
+   
+
+
+</script>    
+        <script type="text/javascript" src="Edmonton%20Public%20Schools_files/login.js"></script>   
+        <script type="text/javascript" src="Edmonton%20Public%20Schools_files/cache_dojo.js"></script>   
+        <script type="text/javascript">
+            function launchOpenIDLogin(dest_url) {
+                location.href = "/openid/openIDStart.jsp?openid_identifier=" + dest_url;
+                return false;
+            }
+            function launchOpenIDConnectLogin(dest_url) {
+                location.href = "/openid/openIDConnectStart.jsp?openid_identifier=" + dest_url;
+                return false;
+            }
+            function launchOpenIDClaim() {
+                location.href = "/pageWrapper.jsp?hk=pagewrapper.message.openidclaim&url=/openid/openIDClaim.jsp?";
+                // location.href = "/pageWrapper.jsp?hk=pagewrapper.message.openidclaim&url=/openid/openIDClaim.jsp?";
+            }
+            
+            //all this logic is to work around an android slate bug where input tabbing doesn't work when the inputs are covered by the keyboard
+            var isAndroidSlate = false;
+            var isLenovoReachLicense = false; //FIXME - get this from actual license api
+            if (isAndroidSlate || isLenovoReachLicense) {
+                window.onresize = checkSize;
+            }
+            var zIndexCnt = 400;
+            var baseClassName = "";
+            function checkSize() {
+                if (isAndroidSlate) {
+                    if (document.getElementById("LoginBox").offsetHeight + 100 > document.body.clientHeight ) {
+                        document.getElementById("LoginBox").className = "movedUp";
+                    } else if (document.getElementById("LoginBox").offsetHeight + 100 < document.body.clientHeight ) {
+                        document.getElementById("LoginBox").className = "";
+
+                    } 
+                }
+                if (isLenovoReachLicense) {
+                    if (baseClassName == "") {
+                        baseClassName = document.body.className;
+                    }
+                    var cw = document.body.clientWidth;
+                    var className = "";
+                    if (cw < 900) {
+                        className = "small"
+                    } else if (cw < 1440) {
+                        className = "medium"
+                    }
+                    var medIdx = document.body.className.indexOf("medium");
+                    var smallIdx = document.body.className.indexOf("small");
+                    if ((className == "medium" && medIdx == -1) || (className == "small" && smallIdx == -1)) {
+                        document.body.className = baseClassName + " " + className;
+                    } 
+                    if (className == "" && (medIdx != -1 || smallIdx != -1)){
+                        document.body.className = baseClassName
+                    }
+                    
+                    //center login footer graphic
+                    var lfg = document.getElementById("loginFooterGraphic");
+                    if (lfg) {
+                        lfg.style.width = cw + "px";
+                    }
+                }
+            }
+            
+            
+            window.addEventListener("load", checkSize);
+          
+        </script>
+    </head>
+    <body class="loginPage">
+        
+
+
+<table id="LoginTable" cellspacing="0" border="0">
+    <tbody><tr id="loginHeaderRow">
+        <td class="loginHeader">
+            <div class="loginFormLogo"></div>
+        </td>
+    </tr>
+    <tr id="BackgroundDisplayHelper">
+        <td class="loginBlockCell"> 
+            <div class="loginTitleBlock"><span>Edmonton Public Schools</span></div>
+                <div class="loginLinksBlock">
+                    <div class="blankLoginBox">
+                        <h1>Additional Links</h1>
+                        
+                            
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <table class="loginForm-info-table">
+            <tbody><tr>
+                <td>
+
+                    
+                    <a href="https://staffzone.epsb.ca/apps/selfService/resetPassword.jsp" style="text-decoration: none">
+                        <div class="loginInformation-icon resetPasswordIcon"><span class="loginInformation-label">Reset Password<span class="loginForm-colon">:</span></span><br>
+                            <span class="loginInformation-link">Click here if you have forgotten your password</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://staffzone.epsb.ca/apps/systemCheck/systemCheck.jsp" style="text-decoration: none" target="_blank" onclick="if (launchSystemCheck) return launchSystemCheck()">
+                        <div class="loginInformation-icon sysCheckIcon"><span class="loginInformation-label">System Check<span class="loginForm-colon">:</span></span><br>
+                            <span class="loginInformation-link">Click here to run a system check</span>
+                        </div>
+                    </a>
+                    
+
+                </td>
+            </tr>
+        </tbody></table>
+        
+
+                        
+                            
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+                    </div>
+                </div>
+                <div class="loginFormBlock">
+                    <div id="LoginBox">
+                        <div id="LoadingIndicator"><div id="LoadingIcon"></div></div>
+                        <h1>Login</h1>
+                         
+                            
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="controlElement" style="height:1px;width: 1px;"></div>
+        
+        <script type="text/javascript">
+
+
+            //Writes USB Applet/ActiveX to controlElement DIV after Dojo (if used) has reloaded page
+            function writeControl(id) {
+            
+            }
+
+            //Call back from USBApplet after applet is loaded and has completed probing for USB devices
+            function displayResults() {
+            }
+
+            if (window.dojo) {
+                writeControl('BackgroundDisplayHelper');
+            }
+            else {
+                writeControl('controlElement');
+            }
+
+            var allowCRC = false;
+
+            function checkEnterOnSubmit(event) {
+                var e = event ? event : window.event;
+                if (e == undefined)
+                    return;
+                var pK = e.which ? e.which : e.keyCode;
+                if (pK == 13) {
+                    if (document.getElementsByClassName) {
+                        var inputs = document.getElementsByClassName("loginForm-text-input");
+                        var isTextInputFilled = false;
+                        var isPwInputFilled = false;
+                        for (var a = 0; a < inputs.length; a++) {
+                            if (inputs[a].type == "text" && inputs[a].value.length > 0) {
+                                isTextInputFilled = true;
+                            } else if (inputs[a].type == "password" && inputs[a].value.length > 0) {
+                                isPwInputFilled = true;
+                            }
+                        }
+                    } else { //cant' check this in template 1 for IE
+                        isTextInputFilled = true;
+                        isPwInputFilled = true;
+                    }
+                    if (isTextInputFilled && isPwInputFilled) {
+                        setLoading();
+                    }
+                }
+            }
+
+            function setLoading() {
+                if (isSample)
+                    return;
+                if (window.dijit && dijit.byId) {
+                    var dojo1loginBtn = dijit.byId("LoginButton");
+                    if (dojo1loginBtn) {
+                        dojo1loginBtn.attr("iconClass", "loadingIcon");
+                        dojo1loginBtn.attr("disabled", "true");
+                    }
+                } else {
+                    var loginBtn = document.getElementById("LoginButton");
+                    if (loginBtn) {
+                        loginBtn.className = "Disabled WebOSButton";
+                    }
+                }
+
+                var loadingIndicator = document.getElementById("LoadingIndicator");
+                if (loadingIndicator) {
+                    loadingIndicator.style.display = "block";
+                    var loadingIcon = document.getElementById("LoadingIcon");
+                    loadingIcon.className = "loading";
+                }
+                prepareFormSubmit();
+            }
+
+            // function to determine that we aren't dealing with iOS devices
+            function notiOS() {
+                var ua = navigator.userAgent.toLowerCase();
+                return ua.indexOf("ipad") == -1 && ua.indexOf("iphone") == -1 && ua.indexOf("ipod") == -1;
+            }
+
+            var doLoadingIcon = true;
+            var isSample = false;
+            var isLoggingIn = false;
+            function prepareFormSubmit() {
+                if (isLoggingIn)
+                    return;
+
+                isLoggingIn = true;
+                /*if (window.console && window.console.debug)console.debug("otpStatus", otpStatus);
+                 if (allowCRC && otpRequired && !shown503) {
+                 if (otpStatus == 0) {
+                 otpStatus = 3;
+                 queryOTP();
+                 return false;
+                 }
+                 }*/
+
+                window.status = 'Please wait while we access your account...';
+                var usbControl = document.getElementById('USBControl')
+                var usbSelect = document.getElementById('wnHardwareID');
+                try {
+                    if (usbControl != null && usbSelect != null && notiOS()) {
+                        if (navigator.userAgent.toLowerCase().indexOf("msie") != -1 && false) {
+                            for (var i = 0; i < usbControl.GetDeviceCount(); i++) {
+                                usbSelect.options[i] = new Option(usbControl.DeviceString(i), usbControl.DeviceString(i), true, true);
+                            }
+                        }
+                        else {
+                            var keys = eval('(' + usbControl.getKeys() + ')');
+                            for (var i = 0; i < keys.length; i++) {
+                                usbSelect.options[i] = new Option(keys[i].serial, keys[i].serial, true, true);
+                            }
+                        }
+                    }
+                }
+                catch (err) {
+                }
+                setTimeout("document.forms[0].submit();", 50); //added a timeout so the loading icon will start spinning in Chrome
+            }
+
+            var hardwareProperties = [
+                ["Core", "TotalInstalledMemory", "installedMemory"]
+            ]
+            function getHardwareInfo() {
+                intel.webapi.context.get("Device", successCB, errorCB);
+            }
+
+            function successCB(infoObject) {
+                infoObject = getValue(infoObject);
+                buildHardwareString({'TotalInstalledMemory': Math.round(infoObject.totalInstalledMemory / 1024 / 1024)});
+            }
+
+            function errorCB(arg) {
+                if (window.console && window.console.debug)
+                    console.debug("error code", arg.code); //error code will be 2 if scanner is not present
+                //if (otpStatus == 3) { //otp query began after user submitted the form, so submit now that the query has completed, even though it failed
+                //    otpStatus = 2;
+                document.forms[0].submit();
+                //}
+
+            }
+            var hardwareJSON = "{";
+            var hardwareInfoRetrievedCnt = 0;
+            function buildHardwareString(infoObject) {
+                for (var pName in infoObject) {
+
+                    if (hardwareJSON.length > 1) {
+                        hardwareJSON += ",";
+                    }
+                    var value = infoObject[pName];
+                    hardwareJSON += "'" + getClientHardwareProperty(pName) + "':" + value;
+
+                }
+                hardwareInfoRetrievedCnt++;
+                if (hardwareInfoRetrievedCnt == hardwareProperties.length) {
+                    hardwareJSON += "}";
+                    document.forms[0].elements['[Client.Hardware]'].value = hardwareJSON;
+                }
+            }
+
+            function getClientHardwareProperty(intelProperty) {
+                for (var n = 0; n < hardwareProperties.length; n++) {
+                    if (hardwareProperties[n][1] == intelProperty) {
+                        return hardwareProperties[n][2];
+                    }
+                }
+                return intelProperty;
+            }
+
+            if (window.dojo) {
+                dojo.addOnLoad(init);
+            } else {
+                window.onload = init;
+            }
+
+
+            var otpRequired = true;
+            var otpTries = 0;
+            var waitingForOTP = false;
+            // -3 = not checked if scanner is present
+            // -2 = checking if scanner is present
+            // -1 = user has submitted the form while check is in progress
+            // 0 = scanner status is available, but not queried OTP
+            // 1 = queried
+            // 2 = recieved query
+            // 3 = submitting login form after otpReturns
+            var otpStatus = 0; //we are no longer checking for scanner status
+            var scannerPresent = false;
+
+            var claimOpenID = false;
+            function init() {
+                if (allowCRC) {
+                    setTimeout("checkHardwareService();", 500);
+                }
+                if (claimOpenID) {
+                    launchOpenIDClaim();
+                }
+                getScreenSize();
+                //otpStatus = -2;
+                //setTimeout("ScannerCheckTimeout();", 5000); //if for whatever reason the scanner check does not notify us, then we we need to assume the device is not present
+            }
+
+            function getScreenSize() {
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                document.getElementById("ViewportSize").value = w + "x" + h;
+            }
+
+            function serviceExists() {
+                getHardwareInfo();
+            }
+
+            var shown503 = false;
+            function serivceError(error) {
+                if (error.Code == 401) {
+                    otpStatus = 0;
+                }
+                if (shown503)
+                    return;
+                shown503 = error.Code == 503;
+                if (window.console && window.console.debug)
+                    console.debug('An Error occurred\nError Code:' + error.Code + "\nError Message: " + error.Message);
+            }
+
+            function getScannerStatus(infoObject) {
+                if (window.console && window.console.debug)
+                    console.debug("getScannerStatus()", infoObject);
+                otpStatus = 0;
+                scannerPresent = infoObject.IsFPScanneravailable == "True";
+                if (scannerPresent) {
+                    var display = false ? "block" : "table-row";
+                    document.getElementById("OTPRow").style.display = display;
+                    document.getElementById("OTPRow2").style.display = display;
+                }
+            }
+
+            function ScannerCheckTimeout() {
+                if (otpStatus == -1) { //user has submitted form and the scanner check never returned, probably due to a 500 error
+                    otpStatus = 0;
+                    scannerPresent = false;
+                    document.forms[0].submit();
+                    if (window.console && window.console.debug)
+                        console.debug("Error: Unable to determine if scanner is present");
+                }
+            }
+
+            function queryOTP() {
+                //if (otpStatus != 3)
+                //    otpStatus = 1;
+                //intel.webapi.context.OTPRequest(getOTPValue, serviceError);
+                intel.OTP.getPassword(getOTPValue, errorCB);
+            }
+
+            function getOTPValue(infoObject) {
+                //console.debug("infoObject", infoObject);
+                if (infoObject && infoObject.response && infoObject.response.authenticated) {
+                    //document.forms[0].elements['[RADIUS.user]'].value = infoObject.CredentialId;
+                    document.forms[0].elements['[RADIUS.password]'].value = infoObject.response.otp;
+                }
+                if (otpStatus == 3) { //otp query began after user submitted the form, so submit now that we have the value
+                    otpStatus = 2;
+                    document.forms[0].submit();
+                } else {
+                    otpStatus = 2;
+                }
+
+            }
+
+            function checkOTPRetrieval() {
+                //  console.debug("checkOTPRetrieval",retrievedOTP );
+                if (retrievedOTP) {
+                    document.forms[0].submit();
+                } else if (otpTries < 15) {
+                    otpTries++;
+                    setTimeout("checkOTPRetrieval()", 500);
+                } else {
+                    document.getElementById("LoginButton").value = "Log In";
+                    alert("We were unable to detect your fingerprint scan, which is required for you to log in.  Please contact support."); //FIXME - localize
+                }
+            }
+
+            function checkOTP() {
+                console.debug("checkOTP");
+                if (otpStatus == 0) {
+                    queryOTP();
+                }
+            }
+
+            function focusElement() {
+                gFocusElement.focus();
+            }
+
+            function enableAndFocus(element) {
+                gFocusElement = element;
+                element.readOnly = false;
+                setTimeout("focusElement()", 1000);
+            }
+        </script>
+
+        
+
+        
+            <form id="loginForm" name="loginForm" method="post" action="/WebNetworkAuth/">
+                <input name="csrfToken" value="muGPmnepAOX4entqJv6b" type="hidden">
+                
+                <input name="[Client.Hardware]" value="" type="hidden">
+                <input id="ViewportSize" name="[User.ViewportSize]" value="1920x922" type="hidden">
+                <div id="errorMessage"> </div>
+                <table class="loginForm-main-table">
+                    
+                    
+                    
+                        
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                                
+                                
+
+                                <tbody><tr>
+                                    <td class="loginForm-label-cell">
+                                        <div class="loginForm-label-text">Username<span class="loginForm-colon">:</span></div>
+                                        
+                                        
+                                        <div class="loginForm-input-container">
+                                            <div class="loginForm-text-input-icon Username"></div>
+                                            <input class="loginForm-text-input" invalidplaceholder="Username" name="sAMAccountName" onfocus="try {
+                                                        if (focusStyle)
+                                                            focusStyle(this)
+                                                    } catch (err) {
+                                                    }" onblur="try {
+                                                                if (blurStyle)
+                                                                    blurStyle(this)
+                                                            } catch (err) {
+                                                            }" onkeyup="return checkEnterOnSubmit(event)" autocapitalize="off" autocorrect="off" autocomplete="off" tabindex="1" type="text">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+
+                            
+                                
+                                
+                                    
+                                
+                                
+
+                                <tr>
+                                    <td class="loginForm-label-cell">
+                                        <div class="loginForm-label-text">Password<span class="loginForm-colon">:</span></div>
+                                        
+                                        
+                                        <div class="loginForm-input-container">
+                                            <div class="loginForm-text-input-icon Password"></div>
+                                            <input class="loginForm-text-input" invalidplaceholder="Password" name="[password]" onfocus="try {
+                                                        if (focusStyle)
+                                                            focusStyle(this)
+                                                    } catch (err) {
+                                                    }" onblur="try {
+                                                                if (blurStyle)
+                                                                    blurStyle(this)
+                                                            } catch (err) {
+                                                            }" onkeyup="return checkEnterOnSubmit(event)" autocapitalize="off" autocorrect="off" autocomplete="off" tabindex="2" type="password">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            
+                        
+                    
+                    
+                    
+                    
+                    <tr>
+                        <td class="loginForm-button-cell" colspan="2" align="right">
+                            
+                            <input id="LoginButton" class="WebOSButton" onclick="setLoading()" alt="Login Button" value="Log In" name="I1" onmouseover="try {
+                                        if (toggleHover)
+                                            toggleHover(this)
+                                    } catch (err) {
+                                    }" onmouseout="try {
+                                                if (toggleHover)
+                                                    toggleHover(this)
+                                            } catch (err) {
+                                            }" type="button">
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+            </form>
+        
+        
+
+                    </div>
+                </div> 
+        
+        </td>
+    </tr>
+    <tr id="loginFooterRow">
+        <td class="loginFooter">
+            <div id="loginFooterGraphic">
+
+            </div>
+           
+        <img src="Edmonton%20Public%20Schools_files/exclamation.png" title="staffzoneb204-x" style="float:left">
+        
+        <span class="loginCopyRightText">
+            <script type="text/javascript">
+                document.writeln( "&copy; Stoneware, Inc. 1999-" + new Date().getFullYear() );
+            </script>© Stoneware, Inc. 1999-2017
+
+        </span>
+        </td>
+    </tr>
+</tbody></table>         
+    
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; bottom: 0px; left: 0px;" src="Edmonton%20Public%20Schools_files/cacheDojo.html" frameborder="0"></iframe></body></html>
